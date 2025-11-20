@@ -85,6 +85,10 @@ We are actively working on this section and will update it soon. 🚧
 ## 3. Affordance-aware Residual Learning
 We are actively working on this section and will update it soon. 🚧
 
+# Acknowledgements
+
+We would like to express our gratitude to: [FGVP](https://github.com/ylingfeng/FGVP), [UniDexGrasp++](https://github.com/PKU-EPIC/UniDexGrasp2), and [ManipTrans](https://maniptrans.github.io/).
+
 
 # Citation
 If you find our work useful, please consider citing us!
