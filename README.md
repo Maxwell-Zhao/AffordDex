@@ -4,7 +4,7 @@ with Human-like Priors </h1>
 
 <div align="center">
 
-This is the official repository of [**Towards Affordance-Aware Robotic Dexterous Grasping with Human-like Priors**](https://afforddex.github.io/). For more information, please visit our project page.
+This is the official repository of [**Towards Affordance-Aware Robotic Dexterous Grasping with Human-like Priors**](https://afforddex.github.io/) (AAAI 2026). For more information, please visit our project page.
 
 [[Website]](https://afforddex.github.io/)
 [[Arxiv]](https://arxiv.org/pdf/2508.08896)
@@ -24,9 +24,10 @@ A dexterous hand capable of generalizable grasping objects is fundamental for th
 
 ## TODO
 - [✅] Release arXiv technique report
+- [✅] Our paper is accepted by AAAI 2026
 - [✅] Release Negative Affordance-aware Segmentation pipeline
 - [✅] Release Human Hand Trajectory Imitating pipeline
-- [] Release Affordance-aware Residual Learning pipeline
+- [✅] Release Affordance-aware Residual Learning pipeline
 
 
 
@@ -80,10 +81,31 @@ python no_render_app.py --image_root xxx --pcd_root xxx --output_root xxx --sam_
 ```
 
 ## 2. Human Hand Trajectory Imitating
-We are actively working on this section and will update it soon. 🚧
+
+Run the following lines in dexgrasp folder.
+
+```python
+cd AffordDex/dexgrasp
+bash script/run_train_imitator.sh 
+```
+
 
 ## 3. Affordance-aware Residual Learning
-We are actively working on this section and will update it soon. 🚧
+We provide two tasks: for the state-based policy task, please modify object_code_dict in cfg/shadow_hand_grasp.yaml in order to change the training objects; for the vision-based policy tasks, in order to train on more objects within a certain GPU memory limit, we randomly load objects from the dataset in the beginning of each episode during training. please see AffordDex/dexgrasp/tasks/shadow_hand_random_load_vision.py.
+
+Run the following lines in dexgrasp folder.
+
+```python
+cd AffordDex/dexgrasp
+bash script/run_train_ppo_state.sh 
+```
+
+training state-based policy distillation using DAgger:
+
+```python
+cd AffordDex/dexgrasp
+bash script/run_train_dagger_state_to_vision.sh
+```
 
 # Acknowledgements
 
